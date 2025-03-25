@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Cap Coat - Innovative Carbon Capture Coating</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .brochure {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e5631, #52b788);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 30%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.1) 35%, transparent 35%);
+            background-size: 10px 10px;
+            opacity: 0.4;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            color: #1e5631;
+            border-bottom: 2px solid #52b788;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+            color: #2d6a4f;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .grid-container-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .card {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-highlight {
+            background-color: #e9f5db;
+            border-left: 4px solid #52b788;
+        }
+        
+        .card-problem {
+            background-color: #ffdfd3;
+            border-left: 4px solid #e76f51;
+        }
+        
+        .card-solution {
+            background-color: #d8f3dc;
+            border-left: 4px solid #52b788;
+        }
+        
+        .card-impact {
+            background-color: #caf0f8;
+            border-left: 4px solid #00b4d8;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li:before {
+            content: "✓";
+            color: #2d6a4f;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .sdg-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .sdg-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 10px 15px;
+        }
+        
+        .sdg-3 {
+            background-color: #4c9f38;
+        }
+        
+        .sdg-9 {
+            background-color: #f36d25;
+        }
+        
+        .sdg-11 {
+            background-color: #f99d26;
+        }
+        
+        .sdg-12 {
+            background-color: #cf8d2a;
+        }
+        
+        .sdg-13 {
+            background-color: #3f7e44;
+        }
+        
+        .sdg-label {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            max-width: 100px;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .table th {
+            background-color: #2d6a4f;
+            color: white;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .severity-high {
+            color: #e63946;
+            font-weight: bold;
+        }
+        
+        .severity-medium {
+            color: #f77f00;
+            font-weight: bold;
+        }
+        
+        .severity-low {
+            color: #2a9d8f;
+            font-weight: bold;
+        }
+        
+        .before-after {
+            display: flex;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .before, .after {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .before {
+            background-color: #ffcfd2;
+            margin-right: 10px;
+        }
+        
+        .after {
+            background-color: #b7e4c7;
+            margin-left: 10px;
+        }
+        
+        .icon-text {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #2d6a4f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .swot-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .swot-card {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .strengths {
+            background-color: #d8f3dc;
+        }
+        
+        .weaknesses {
+            background-color: #ffdfd3;
+        }
+        
+        .opportunities {
+            background-color: #caf0f8;
+        }
+        
+        .threats {
+            background-color: #ffe5d9;
+        }
+        
+        .bmc-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .bmc-card {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bmc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d6a4f;
+        }
+        
+        .value-prop {
+            grid-column: 2;
+            grid-row: 1 / span 3;
+            background-color: #d8f3dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .needs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .need-badge {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e5631, #52b788);
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .tag-line {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .main-tagline {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+        
+        .illustration {
+            width: 100%;
+            height: 200px;
+            background-color: #e9f5db;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container, 
+            .grid-container-3,
+            .swot-container,
+            .bmc-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-prop {
+                grid-column: 1;
+                grid-row: auto;
+            }
+            
+            .before-after {
+                flex-direction: column;
+            }
+            
+            .before, .after {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <header>
+            <div class="header-pattern"></div>
+            <h1>C-Cap Coat</h1>
+            <p>Revolutionary Photocatalytic TiO2 Coating for Carbon Capture & Infrastructure Protection</p>
+        </header>
+        
+        <section class="section">
+            <h2>Innovation Overview</h2>
+            <p>C-Cap Coat is a revolutionary coating technology that absorbs CO2 and other pollutants using Photocatalytic TiO2. The coating also protects construction with crack prevention and self-healing technologies—easily applied with no need for reconstruction.</p>
+            
+            <div class="illustration">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%">
+                    <!-- Building -->
+                    <rect x="50" y="30" width="200" height="150" fill="#d3d3d3" stroke="#666" stroke-width="2"/>
+                    <rect x="90" y="50" width="40" height="40" fill="#a5c7e7" stroke="#666" stroke-width="1"/>
+                    <rect x="170" y="50" width="40" height="40" fill="#a5c7e7" stroke="#666" stroke-width="1"/>
+                    <rect x="90" y="110" width="40" height="40" fill="#a5c7e7" stroke="#666" stroke-width="1"/>
+                    <rect x="170" y="110" width="40" height="40" fill="#a5c7e7" stroke="#666" stroke-width="1"/>
+                    <rect x="120" y="160" width="60" height="20" fill="#8b4513" stroke="#666" stroke-width="1"/>
+                    
+                    <!-- Road -->
+                    <rect x="250" y="160" width="500" height="20" fill="#555" stroke="#333" stroke-width="1"/>
+                    <line x1="280" y1="170" x2="320" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="350" y1="170" x2="390" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="420" y1="170" x2="460" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="490" y1="170" x2="530" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="560" y1="170" x2="600" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="630" y1="170" x2="670" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    <line x1="700" y1="170" x2="740" y2="170" stroke="#fff" stroke-width="2" stroke-dasharray="20,20"/>
+                    
+                    <!-- Coating Animation -->
+                    <rect x="50" y="30" width="200" height="150" fill="url(#gradient)" opacity="0.3"/>
+                    <rect x="250" y="160" width="500" height="20" fill="url(#gradient)" opacity="0.3"/>
+                    
+                    <!-- CO2 Particles -->
+                    <circle cx="400" cy="80" r="6" fill="#666" opacity="0.7">
+                        <animate attributeName="cy" from="40" to="90" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" from="0.7" to="0.1" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="350" cy="60" r="5" fill="#666" opacity="0.6">
+                        <animate attributeName="cy" from="30" to="80" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" from="0.6" to="0.1" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="450" cy="70" r="7" fill="#666" opacity="0.8">
+                        <animate attributeName="cy" from="35" to="90" dur="3.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" from="0.8" to="0.1" dur="3.5s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- Sun -->
+                    <circle cx="700" cy="60" r="30" fill="#F9D71C"/>
+                    <line x1="700" y1="15" x2="700" y2="0" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="700" y1="105" x2="700" y2="120" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="655" y1="60" x2="640" y2="60" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="745" y1="60" x2="760" y2="60" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="668" y1="28" x2="658" y2="18" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="732" y1="92" x2="742" y2="102" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="668" y1="92" x2="658" y2="102" stroke="#F9D71C" stroke-width="3"/>
+                    <line x1="732" y1="28" x2="742" y2="18" stroke="#F9D71C" stroke-width="3"/>
+                    
+                    <!-- Light Rays -->
+                    <line x1="670" y1="70" x2="600" y2="100" stroke="#F9D71C" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="680" y1="80" x2="620" y2="130" stroke="#F9D71C" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="690" y1="80" x2="650" y2="150" stroke="#F9D71C" stroke-width="1.5" opacity="0.6"/>
+                    
+                    <!-- Gradients -->
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#52b788;stop-opacity:0.7"/>
+                            <stop offset="100%" style="stop-color:#2d6a4f;stop-opacity:0.7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <h3>Supporting Sustainable Development Goals</h3>
+            <div class="sdg-icons">
+                <div>
+                    <div class="sdg-icon sdg-3">3</div>
+                    <div class="sdg-label">Good Health and Well-being</div>
+                </div>
+                <div>
+                    <div class="sdg-icon sdg-9">9</div>
+                    <div class="sdg-label">Industry, Innovation and Infrastructure</div>
+                </div>
+                <div>
+                    <div class="sdg-icon sdg-11">11</div>
+                    <div class="sdg-label">Sustainable Cities and Communities</div>
+                </div>
+                <div>
+                    <div class="sdg-icon sdg-12">12</div>
+                    <div class="sdg-label">Responsible Consumption and Production</div>
+                </div>
+                <div>
+                    <div class="sdg-icon sdg-13">13</div>
+                    <div class="sdg-label">Climate Action</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Addressing Human Basic Needs</h2>
+            <div class="needs-container">
+                <div class="need-badge">Clean Air</div>
+                <div class="need-badge">Health & Safety</div>
+                <div class="need-badge">Shelter Protection</div>
+                <div class="need-badge">Economic Stability</div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="card card-highlight">
+                    <h3>Biomimicry & Local Wisdom</h3>
+                    <p>Inspired by natural photosynthesis and self-healing film, our advanced coating technology preserves existing infrastructure value while addressing community needs.</p>
+                </div>
+                <div class="card card-highlight">
+                    <h3>Appropriated Technology</h3>
+                    <p>TiO2 coating technologies applicable to various surfaces, maximizing coverage area to capture more pollutants efficiently.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Problem & Solution Framework</h2>
+            <div class="grid-container">
+                <div class="card card-problem">
+                    <h3>Key Problems</h3>
+                    <div class="icon-text">
+                        <div class="icon">1</div>
+                        <div>Too many pollutants in the air</div>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">2</div>
+                        <div>High cost of carbon capture infrastructure</div>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">3</div>
+                        <div>Building maintenance costs when cracks appear</div>
+                    </div>
+                </div>
+                <div class="card card-solution">
+                    <h3>Our Innovations</h3>
+                    <div class="icon-text">
+                        <div class="icon">A</div>
+                        <div>Surface coating that absorbs carbon and other pollutants</div>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">B</div>
+                        <div>Photocatalytic technology combined with coating for any surface</div>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">C</div>
+                        <div>Self-cleaning photocatalytic coatings with crack-prevention</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Implementation Challenges</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Issues</th>
+                        <th>Type</th>
+                        <th>Severity</th>
+                        <th>Impact</th>
+                        <th>Solutions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Building maintenance when cracks appear</td>
+                        <td>Infrastructure maintenance</td>
+                        <td class="severity-high">High</td>
+                        <td>Financial and resource consumption</td>
+                        <td>Self-cleaning photocatalytic coatings with crack-prevention from TiO2</td>
+                    </tr>
+                    <tr>
+                        <td>Air pollution in urban areas</td>
+                        <td>General environmental issue</td>
+                        <td class="severity-high">High</td>
+                        <td>Reduced quality of life</td>
+                        <td>Photocatalytic coatings absorb pollutants and CO2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="section">
+            <h2>Pain Points & Technological Solutions</h2>
+            <div class="grid-container-3">
+                <div class="card">
+                    <h3>Pain/Gain Points</h3>
+                    <ul>
+                        <li>High building/infrastructure reconstruction costs</li>
+                        <li>Reduced maintenance costs</li>
+                        <li>Improved air quality needs</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Appropriated Technology</h3>
+                    <ul>
+                        <li>Photocatalytic TiO2 coating system</li>
+                        <li>Self-healing surface technology</li>
+                        <li>Easy application on existing surfaces</li>
+                    </ul>
+                </div>
+                <div class="card card-impact">
+                    <h3>Expected Outcomes</h3>
+                    <ul>
+                        <li>Better air quality</li>
+                        <li>Lower maintenance costs</li>
+                        <li>Better public health</li>
+                        <li>More CO2 captured</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Area Based Transformation</h2>
+            <div class="before-after">
+                <div class="before">
+                    <h3>Before C-Cap Coat</h3>
+                    <ul>
+                        <li>High pollution levels</li>
+                        <li>Frequent maintenance needs</li>
+                        <li>High infrastructure costs</li>
+                        <li>Poor air quality</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h3>After C-Cap Coat</h3>
+                    <ul>
+                        <li>Cleaner air quality</li>
+                        <li>More sustainable infrastructure</li>
+                        <li>Reduced maintenance frequency</li>
+                        <li>Significant cost savings</li>
+                        <li>Effective carbon capture</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Business Model & SWOT Analysis</h2>
+            <div class="swot-container">
+                <div class="swot-card strengths">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>Cost-effective, multiple benefits</li>
+                        <li>Easy application process</li>
+                        <li>Environmental benefits</li>
+                        <li>Reduces carbon emissions</li>
+                        <li>Multi-functional protection</li>
+                    </ul>
+                </div>
+                <div class="swot-card weaknesses">
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>Research investment needed initially</li>
+                        <li>Limited public awareness</li>
+                        <li>Market knowledge gaps</li>
+                        <li>Dependence on government projects</li>
+                    </ul>
+                </div>
+                <div class="swot-card opportunities">
+                    <h3>Opportunities</h3>
+                    <ul>
+                        <li>Growing green market</li>
+                        <li>Government support potential</li>
+                        <li>Carbon credit benefits</li>
+                        <li>Urban expansion projects</li>
+                        <li>Corporate sustainability interest</li>
+                    </ul>
+                </div>
+                <div class="swot-card threats">
+                    <h3>Threats</h3>
+                    <ul>
+                        <li>Competition from similar technologies</li>
+                        <li>Economic situations affecting investment</li>
+                        <li>Government policy changes</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Business Model Canvas</h3>
+            <div class="bmc-container">
+                <div class="bmc-card">
+                    <div class="bmc-title">Key Partners</div>
+                    <p>Government agencies, Environmental organizations</p>
+                </div>
+                <div class="bmc-card value-prop">
+                    <div class="bmc-title">Value Propositions</div>
+                    <p>Low-cost carbon capture solution that improves air quality while protecting infrastructure</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Customer Segments</div>
+                    <p>Government agencies, Infrastructure firms</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Key Activities</div>
+                    <p>Research and development, Manufacturing, Distribution</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Customer Relationships</div>
+                    <p>Government contracts, Public awareness campaigns</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Key Resources</div>
+                    <p>Catalytic components, Patented coating technology</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Channels</div>
+                    <p>Government auction projects, Direct partnerships</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Cost Structure</div>
+                    <p>800,000 baht for development, Manufacturing, Marketing</p>
+                </div>
+                <div class="bmc-card">
+                    <div class="bmc-title">Revenue Streams</div>
+                    <p>Selling C-Cap Coat technology, Licensing to companies, Government incentives</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="main-tagline">C-Cap Coat: Transforming Infrastructure into Carbon Capture Assets</div>
+            <p class="tag-line">Breathe cleaner. Build smarter. Save the planet—one surface at a time.</p>
+            <p>Developed by Nattapong Kokaew</p>
+        </footer>
+    </div>
+</body>
+</html>
